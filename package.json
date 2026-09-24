@@ -1,0 +1,20 @@
+{
+  "name": "flutter-template",
+  "private": true,
+  "packageManager": "pnpm@11.9.0",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "lefthook install",
+    "format": "dart format .",
+    "format:check": "dart format --output=none --set-exit-if-changed .",
+    "analyze": "flutter analyze --fatal-infos",
+    "test": "flutter test",
+    "verify": "pnpm run format:check && pnpm run analyze && pnpm run test"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "lefthook": "^1.11.13",
+    "only-allow": "^1.2.2"
+  }
+}

@@ -1,0 +1,19 @@
+commit-msg:
+  commands:
+    commitlint:
+      run: npx commitlint --edit {1}
+
+pre-commit:
+  parallel: true
+  commands:
+    dart-format:
+      glob: '*.dart'
+      run: dart format {staged_files}
+      stage_fixed: true
+    flutter-analyze:
+      run: flutter analyze --fatal-infos
+
+pre-push:
+  commands:
+    flutter-test:
+      run: flutter test
